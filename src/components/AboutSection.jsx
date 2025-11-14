@@ -2,9 +2,9 @@ import Container from "./Container";
 
 import AboutImage from "../assets/persada-office-park-2.jpg";
 
-export default function AboutSection() {
+export default function AboutSection({ aboutRef, onViewServices }) {
   return (
-    <div className=" pt-20 font-sans">
+    <div ref={aboutRef} className=" py-16 md:py-28 font-sans">
       <Container>
         <div className=" mx-4 px-10 py-14 bg-gradient-to-br from-secondary via-[#052E70] to-primary rounded-xl shadow-xl">
           <div className=" text-center">
@@ -45,10 +45,13 @@ export default function AboutSection() {
                 tax regulations with confidence and ensure they remain compliant
                 while optimizing their tax efficiency.
               </p>
-              <p className=" text-right my-6 text-lg bg-clip-text text-transparent bg-gradient-to-r from-[#5EEAD4] via-[#818CF8] to-[#3B82F6]">
+              <p className=" font-semibold italic text-right my-6 text-lg bg-clip-text text-transparent bg-gradient-to-r from-[#5EEAD4] via-[#818CF8] to-[#3B82F6]">
                 INTEGRITY, PROFESSIONALISM, EXCELLENCE.
               </p>
-              <button className=" bg-gradient-to-l from-[#5EEAD4] via-[#818CF8] to-[#3B82F6] px-5 py-3 cursor-pointer rounded-lg font-semibold hover:scale-105 transition duration-300">
+              <button
+                onClick={onViewServices}
+                className=" bg-gradient-to-l from-[#5EEAD4] via-[#818CF8] to-[#3B82F6] px-5 py-3 cursor-pointer rounded-lg font-semibold hover:scale-105 transition duration-300"
+              >
                 See Our Service
               </button>
             </div>
@@ -58,15 +61,15 @@ export default function AboutSection() {
                 <img
                   src={AboutImage}
                   alt="about-image-dsa"
-                  className="w-full h-[480px] object-cover scale-105 group-hover:scale-110 transition-transform duration-700 ease-out"
+                  className="w-full h-[510px] object-cover scale-105 group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6">
                   <h3 className="text-white text-2xl font-bold">
-                    “Creating Places That Connect People”
+                    “professional and comprehensive tax consulting services”
                   </h3>
                   <p className="text-gray-300 text-sm">
-                    Entertainment, comfort, and innovation in every corner.
+                    individuals, businesses, and organizations.
                   </p>
                 </div>
               </div>
