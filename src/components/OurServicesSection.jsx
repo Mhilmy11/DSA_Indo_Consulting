@@ -6,6 +6,7 @@ import CardImage1 from "../assets/section-card-1.png";
 import CardImage2 from "../assets/section-card-2.png";
 import CardImage3 from "../assets/section-card-3.png";
 import CardImage4 from "../assets/section-card-4.png";
+import FramerMotion from "./FramerMotion";
 
 const services = [
   {
@@ -58,49 +59,53 @@ export default function OurServicesSection({ servicesRef }) {
               const isOpen = expandedIndex === i;
 
               return (
-                <div
-                  key={i}
-                  className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg"
-                >
-                  <img
-                    className="rounded-t-lg"
-                    src={serve.image}
-                    alt={serve.title}
-                  />
+                <FramerMotion animation="zoom-in" delay={i * 0.3}>
+                  <div
+                    key={i}
+                    className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg"
+                  >
+                    <img
+                      className="rounded-t-lg"
+                      src={serve.image}
+                      alt={serve.title}
+                    />
 
-                  <div className="px-4 py-4">
-                    <h2 className="text-xl font-semibold mb-2">
-                      {serve.title}
-                    </h2>
+                    <div className="px-4 py-4">
+                      <h2 className="text-xl font-semibold mb-2">
+                        {serve.title}
+                      </h2>
 
-                    {!isOpen && (
-                      <p className="line-clamp-3 text-sm text-white/90">
-                        {serve.desc}
-                      </p>
-                    )}
-
-                    <AnimatePresence>
-                      {isOpen && (
-                        <motion.div
-                          key="content"
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.35 }}
-                        >
-                          <p className="text-sm text-white/90">{serve.desc}</p>
-                        </motion.div>
+                      {!isOpen && (
+                        <p className="line-clamp-3 text-sm text-white/90">
+                          {serve.desc}
+                        </p>
                       )}
-                    </AnimatePresence>
 
-                    <button
-                      onClick={() => handleToggle(i)}
-                      className="text-blue-300 hover:text-blue-400 text-sm mt-2 cursor-pointer"
-                    >
-                      {isOpen ? "Read Less" : "Read More"}
-                    </button>
+                      <AnimatePresence>
+                        {isOpen && (
+                          <motion.div
+                            key="content"
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.35 }}
+                          >
+                            <p className="text-sm text-white/90">
+                              {serve.desc}
+                            </p>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+
+                      <button
+                        onClick={() => handleToggle(i)}
+                        className="text-blue-300 hover:text-blue-400 text-sm mt-2 cursor-pointer"
+                      >
+                        {isOpen ? "Read Less" : "Read More"}
+                      </button>
+                    </div>
                   </div>
-                </div>
+                </FramerMotion>
               );
             })}
           </div>

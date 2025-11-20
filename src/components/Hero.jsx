@@ -21,42 +21,46 @@ export default function Hero({ onViewAbout, onViewContact }) {
               </h3>
             </FramerMotion>
 
-            <p className=" text-base md:text-lg text-lightText py-4">
-              We help our clients navigate Indonesia's complex tax regulations
-              with confidence and ensure they remain compliant while optimizing
-              their tax efficiency.
-            </p>
+            <FramerMotion>
+              <p className=" text-base md:text-lg text-lightText py-4">
+                We help our clients navigate Indonesia's complex tax regulations
+                with confidence and ensure they remain compliant while
+                optimizing their tax efficiency.
+              </p>
 
-            <div className=" flex gap-4 font-semibold text-lightText">
-              <button
-                onClick={onViewContact}
-                className=" bg-gradient-to-r from-[#64FFDA] to-[#3B82F6] rounded-full px-4 py-2 cursor-pointer hover:scale-105 transition duration-300"
-              >
-                Talk to an Expert
-              </button>
-              <button
-                onClick={onViewAbout}
-                className=" border border-gray-700 rounded-full px-4 py-2 cursor-pointer hover:scale-105 transition duration-300"
-              >
-                Learn More
-              </button>
-            </div>
+              <div className=" flex gap-4 font-semibold text-lightText">
+                <button
+                  onClick={onViewContact}
+                  className=" bg-gradient-to-r from-[#64FFDA] to-[#3B82F6] rounded-full px-4 py-2 cursor-pointer hover:scale-105 transition duration-300"
+                >
+                  Talk to an Expert
+                </button>
+                <button
+                  onClick={onViewAbout}
+                  className=" border border-gray-700 rounded-full px-4 py-2 cursor-pointer hover:scale-105 transition duration-300"
+                >
+                  Learn More
+                </button>
+              </div>
+            </FramerMotion>
           </div>
 
           <div>
-            <div className="aspect-[16/9] rounded-xl overflow-hidden shadow-2xl border border-white/5">
-              <div className="w-full h-full relative">
-                <img src={HeroImage} alt="hero-image-dsa" />
-                <div className=" hover:scale-105 transition duration-300 absolute left-6 bottom-6 bg-white/6 px-4 py-3 rounded-2xl backdrop-blur-sm border border-white/8">
-                  <div className="text-sm font-semibold text-accent">
-                    Persada Office Park
-                  </div>
-                  <div className="text-xs text-gray-300">
-                    Committed • Accurate • Strategic
+            <FramerMotion animation="fade-right">
+              <div className="aspect-[16/9] rounded-xl overflow-hidden shadow-2xl border border-white/5">
+                <div className="w-full h-full relative">
+                  <img src={HeroImage} alt="hero-image-dsa" />
+                  <div className=" hover:scale-105 transition duration-300 absolute left-6 bottom-6 bg-white/6 px-4 py-3 rounded-2xl backdrop-blur-sm border border-white/8">
+                    <div className="text-sm font-semibold text-accent">
+                      Persada Office Park
+                    </div>
+                    <div className="text-xs text-gray-300">
+                      Committed • Accurate • Strategic
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </FramerMotion>
           </div>
         </div>
       </Container>

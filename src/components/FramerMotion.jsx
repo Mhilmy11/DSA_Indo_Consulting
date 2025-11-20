@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const animations = {
   "fade-up": {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 200 },
     visible: { opacity: 1, y: 0 },
   },
   "fade-down": {
