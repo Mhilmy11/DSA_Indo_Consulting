@@ -12,6 +12,7 @@ function App() {
   const teamsRef = useRef(null);
   const servicesRef = useRef(null);
   const aboutRef = useRef(null);
+  const contactRef = useRef(null);
 
   const scrollToSection = (ref) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -21,9 +22,13 @@ function App() {
       <Navbar
         onViewTeams={() => scrollToSection(teamsRef)}
         onViewServices={() => scrollToSection(servicesRef)}
+        onViewContact={() => scrollToSection(contactRef)}
       />
 
-      <Hero onViewAbout={() => scrollToSection(aboutRef)} />
+      <Hero
+        onViewAbout={() => scrollToSection(aboutRef)}
+        onViewContact={() => scrollToSection(contactRef)}
+      />
 
       <AboutSection
         aboutRef={aboutRef}
@@ -34,7 +39,7 @@ function App() {
 
       <OurServicesSection servicesRef={servicesRef} />
 
-      <GetInTouch />
+      <GetInTouch contactRef={contactRef} />
 
       <Footer
         onViewTeams={() => scrollToSection(teamsRef)}

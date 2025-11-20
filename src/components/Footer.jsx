@@ -58,19 +58,58 @@ export default function Footer({ onViewTeams, onViewServices }) {
               </div>
 
               <div className=" text-lightText flex items-center gap-4 pt-5 md:pt-0">
-                <button className=" cursor-pointer hover:text-gray-400">
+                <button
+                  onClick={() =>
+                    window.open(
+                      "https://id.linkedin.com/company/dsa-indo-consulting",
+                      "_blank"
+                    )
+                  }
+                  className=" cursor-pointer hover:text-gray-400"
+                >
                   <FaLinkedin size={30} />
                 </button>
-                <button className=" cursor-pointer hover:text-gray-400">
+
+                <button
+                  onClick={() =>
+                    (window.location.href =
+                      "mailto:info@dsaindoconsulting.co.id")
+                  }
+                  className=" cursor-pointer hover:text-gray-400"
+                >
                   <HiOutlineMail size={30} />
                 </button>
-                <button className=" cursor-pointer hover:text-gray-400">
+
+                <button
+                  onClick={() =>
+                    window.open("https://wa.me/6281385269507", "_blank")
+                  }
+                  className=" cursor-pointer hover:text-gray-400"
+                >
                   <FaWhatsapp size={30} />
                 </button>
-                <button className=" cursor-pointer hover:text-gray-400">
+
+                <button
+                  onClick={() =>
+                    window.open(
+                      "https://www.instagram.com/dsaindoconsulting/",
+                      "_blank"
+                    )
+                  }
+                  className=" cursor-pointer hover:text-gray-400"
+                >
                   <FaInstagram size={30} />
                 </button>
-                <button className=" cursor-pointer hover:text-gray-400">
+
+                <button
+                  onClick={() =>
+                    window.open(
+                      "https://maps.app.goo.gl/C7bPsFGaUJqyHBLB7",
+                      "_blank"
+                    )
+                  }
+                  className=" cursor-pointer hover:text-gray-400"
+                >
                   <MdLocationPin size={30} />
                 </button>
               </div>

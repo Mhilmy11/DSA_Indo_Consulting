@@ -6,7 +6,7 @@ import LogoDSA from "../assets/dsa-logo-nobg.png";
 
 import Container from "./Container";
 
-export default function Navbar({ onViewTeams, onViewServices }) {
+export default function Navbar({ onViewTeams, onViewServices, onViewContact }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -42,7 +42,10 @@ export default function Navbar({ onViewTeams, onViewServices }) {
               >
                 Our Service
               </button>
-              <button className="px-4 py-2 rounded-full bg-accent text-secondary font-medium hover:bg-primary hover:text-lightText transition-all duration-300 cursor-pointer">
+              <button
+                onClick={onViewContact}
+                className="px-4 py-2 rounded-full bg-accent text-secondary font-medium hover:bg-primary hover:text-lightText transition-all duration-300 cursor-pointer"
+              >
                 Contact Us
               </button>
             </div>

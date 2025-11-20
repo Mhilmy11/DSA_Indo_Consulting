@@ -1,71 +1,106 @@
 import Container from "./Container";
 
-export default function GetInTouch() {
+export default function GetInTouch({ contactRef }) {
+  const sendToWhatsApp = (phone, name, email, message) => {
+    const text =
+      `Halo Mimin, saya ingin menghubungi Anda.\n\n` +
+      `*Name*: ${name}\n` +
+      `*Email*: ${email}\n\n` +
+      `*Message*: \n${message}`;
+
+    const encoded = encodeURIComponent(text);
+
+    window.open(`https://wa.me/${phone}?text=${encoded}`, "_blank");
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const message = e.target.message.value;
+
+    const phone = "6281385269507";
+
+    sendToWhatsApp(phone, name, email, message);
+  };
+
   return (
-    <section className="py-20 bg-[#0B0F19]">
+    <div ref={contactRef} className=" py-16 md:py-28 font-sans">
       <Container>
-        <h2 className="text-4xl font-bold text-center mb-10 bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-          Get In Touch
-        </h2>
+        <div className=" mx-4 px-10 py-12 bg-gradient-to-b from-black to-[#042E63] rounded-lg shadow-lg">
+          <div className=" grid grid-cols-1 md:grid-cols-2">
+            <div>
+              <p className=" bg-gray-500/80 text-lg w-max px-4 py-1 rounded-full text-lightText font-semibold">
+                Contact Us
+              </p>
 
-        <p>Connect with our experts and experience smarter tax solutions.</p>
+              <h3 className=" text-lightText font-bold md:text-4xl text-2xl pt-5">
+                Let's Get In Touch.
+              </h3>
 
-        <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Name */}
-          <div className="flex flex-col">
-            <label className="text-gray-300 text-sm">Your Name</label>
-            <input
-              type="text"
-              className="mt-2 px-4 py-3 rounded-xl bg-[#0D111A] border border-[#1C2535] 
-                     text-gray-200 focus:border-blue-400 outline-none transition"
-              placeholder="Enter your name"
-            />
+              <p className=" text-gray-400 text-xs pb-5 pl-1">
+                Connect with our experts and experience smarter tax solutions.
+              </p>
+
+              <p className=" text-gray-300">
+                Or reach just out manually to{" "}
+                <span
+                  onClick={() =>
+                    window.open("https://wa.me/6281385269507", "_blank")
+                  }
+                  className=" cursor-pointer text-accent hover:text-gray-300 transition"
+                >
+                  +62 81385269507.
+                </span>
+              </p>
+            </div>
+
+            <div className=" text-lightText font-semibold">
+              <form onSubmit={handleSubmit}>
+                <div className=" mt-5">
+                  <p className=" text-sm">Full Name</p>
+                  <input
+                    className=" bg-[#0D111A] border border-[#1C2535] text-gray-200 focus:border-blue-400 outline-none transition w-full rounded-full px-4 py-2 mt-2 text-sm"
+                    type="text"
+                    name="name"
+                    placeholder="Enter full name...."
+                  />
+                </div>
+
+                <div className=" mt-5">
+                  <p className=" text-sm">Your Email</p>
+                  <input
+                    className=" bg-[#0D111A] border border-[#1C2535] text-gray-200 focus:border-blue-400 outline-none transition w-full rounded-full px-4 py-2 mt-2 text-sm"
+                    type="email"
+                    name="email"
+                    placeholder="Enter email...."
+                  />
+                </div>
+
+                <div className=" mt-5">
+                  <p className=" text-sm">Full Name</p>
+                  <textarea
+                    className=" bg-[#0D111A] border border-[#1C2535] text-gray-200 focus:border-blue-400 outline-none transition w-full rounded-xl px-4 py-2 mt-2 text-sm"
+                    rows="5"
+                    name="message"
+                    placeholder="Enter your main text here...."
+                  />
+                </div>
+
+                <div className=" mt-10">
+                  <button
+                    className="w-full py-3 rounded-xl bg-gradient-to-l from-primary to-blue-400
+                     text-white font-semibold hover:opacity-90 transition cursor-pointer"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-
-          {/* Email */}
-          <div className="flex flex-col">
-            <label className="text-gray-300 text-sm">Your Email</label>
-            <input
-              type="email"
-              className="mt-2 px-4 py-3 rounded-xl bg-[#0D111A] border border-[#1C2535] 
-                     text-gray-200 focus:border-blue-400 outline-none transition"
-              placeholder="email@example.com"
-            />
-          </div>
-
-          {/* Subject */}
-          <div className="flex flex-col md:col-span-2">
-            <label className="text-gray-300 text-sm">Subject</label>
-            <input
-              type="text"
-              className="mt-2 px-4 py-3 rounded-xl bg-[#0D111A] border border-[#1C2535] 
-                     text-gray-200 focus:border-blue-400 outline-none transition"
-              placeholder="What is this about?"
-            />
-          </div>
-
-          {/* Message */}
-          <div className="flex flex-col md:col-span-2">
-            <label className="text-gray-300 text-sm">Message</label>
-            <textarea
-              rows="5"
-              className="mt-2 px-4 py-3 rounded-xl bg-[#0D111A] border border-[#1C2535] 
-                     text-gray-200 focus:border-blue-400 outline-none transition resize-none"
-              placeholder="Write your message..."
-            ></textarea>
-          </div>
-
-          {/* Button */}
-          <div className="md:col-span-2">
-            <button
-              className="w-full py-3 rounded-xl bg-gradient-to-r from-primary to-blue-400 
-                     text-white font-semibold hover:opacity-90 transition"
-            >
-              Send Message
-            </button>
-          </div>
-        </form>
+        </div>
       </Container>
-    </section>
+    </div>
   );
 }
