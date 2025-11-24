@@ -48,26 +48,27 @@ export default function OurServicesSection({ servicesRef }) {
     setExpandedIndex(expandedIndex === i ? null : i);
   };
   return (
-    <div ref={servicesRef} className=" py-16 md:py-28 font-sans">
+    <div
+      ref={servicesRef}
+      className="py-16 md:py-28 font-sans overflow-x-hidden"
+    >
       <Container>
-        <div className=" mx-4 px-10 py-14 bg-gradient-to-tr from-[#073B85] via-[#0D63CF] to-[#A5D4FF] shadow-xl rounded-xl">
-          <h3 className=" font-bold bg-gradient-to-r from-[#021C3A] via-[#0449A8] to-[#0D63CF] text-transparent bg-clip-text text-2xl md:text-4xl pb-10">
+        <div className="mx-1 px-6 md:px-10 py-14 bg-gradient-to-tr from-[#073B85] via-[#0D63CF] to-[#A5D4FF] rounded-xl shadow-xl">
+          <h3 className="font-bold bg-gradient-to-r from-[#021C3A] via-[#0449A8] to-[#0D63CF] text-transparent bg-clip-text text-2xl md:text-4xl pb-10">
             Our Services
           </h3>
-          <div className=" grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((serve, i) => {
               const isOpen = expandedIndex === i;
 
               return (
-                <FramerMotion animation="zoom-in" delay={i * 0.3}>
-                  <div
-                    key={i}
-                    className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg"
-                  >
+                <FramerMotion animation="zoom-in" delay={i * 0.3} key={i}>
+                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg overflow-hidden">
                     <img
-                      className="rounded-t-lg"
                       src={serve.image}
                       alt={serve.title}
+                      className="w-full h-44 object-cover"
                     />
 
                     <div className="px-4 py-4">
@@ -99,7 +100,7 @@ export default function OurServicesSection({ servicesRef }) {
 
                       <button
                         onClick={() => handleToggle(i)}
-                        className="text-blue-300 hover:text-blue-400 text-sm mt-2 cursor-pointer"
+                        className="text-blue-300 hover:text-blue-400 text-sm mt-2"
                       >
                         {isOpen ? "Read Less" : "Read More"}
                       </button>
