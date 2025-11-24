@@ -54,7 +54,8 @@ export default function Footer({ onViewTeams, onViewServices }) {
 
             <div className=" md:flex justify-between items-center">
               <div className="text-sm mt-3 italic text-accent">
-                © {new Date().getFullYear()} KOPIJATIGOTA — All rights reserved
+                © {new Date().getFullYear()} DSAINDOCONSULTING — All rights
+                reserved
               </div>
 
               <div className=" text-lightText flex items-center gap-4 pt-5 md:pt-0">
