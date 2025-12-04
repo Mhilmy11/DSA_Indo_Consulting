@@ -9,7 +9,7 @@ import Container from "./Container";
 export default function Footer({ onViewTeams, onViewServices }) {
   return (
     <div className=" pt-20 font-sans">
-      <div className=" bg-gradient-to-b from-[#021C3A] to-[#042E63] py-6">
+      <div className=" bg-gradient-to-r from-[#1E5DB3] to-[#184B8F] py-6">
         <Container>
           <div className=" px-4">
             <div className=" flex items-center gap-4">
@@ -18,18 +18,14 @@ export default function Footer({ onViewTeams, onViewServices }) {
                 src={LogoDSA}
                 alt="logo-dsa-footer"
               />
-              <div>
-                <h1 className=" font-bold text-lightText text-xl">
-                  DSA Consulting INDO
-                </h1>
-                <h1 className=" text-accent text-xs">
-                  PT. DSA INDO CONSULTING
-                </h1>
+              <div className=" text-lightText">
+                <h1 className=" font-bold text-xl">DSA Consulting</h1>
+                <h1 className=" text-xs">PT DSA Indo Consulting</h1>
               </div>
             </div>
 
             <div className=" py-6">
-              <p className=" text-gray-400">
+              <p className=" text-white">
                 Graha Persada Office Park, Jl. KH. Noer Ali No.3A, Kayuringin
                 Jaya, South Bekasi, West Java, Indonesia.
               </p>
@@ -38,13 +34,13 @@ export default function Footer({ onViewTeams, onViewServices }) {
             <div className=" flex items-center gap-6">
               <button
                 onClick={onViewTeams}
-                className=" cursor-pointer hover:text-gray-400 text-white font-semibold"
+                className=" cursor-pointer hover:text-[#74F8D4] transition text-white font-semibold"
               >
                 Our Teams
               </button>
               <button
                 onClick={onViewServices}
-                className=" cursor-pointer hover:text-gray-400 text-white font-semibold"
+                className=" cursor-pointer hover:text-[#74F8D4] transition text-white font-semibold"
               >
                 Our Services
               </button>
@@ -53,8 +49,8 @@ export default function Footer({ onViewTeams, onViewServices }) {
             <div className=" h-0.5 w-full bg-white mt-10 mb-5"></div>
 
             <div className=" md:flex justify-between items-center">
-              <div className="text-sm mt-3 italic text-accent">
-                © {new Date().getFullYear()} DSAINDOCONSULTING — All rights
+              <div className="text-sm mt-3 italic font-semibold">
+                © {new Date().getFullYear()} 2025 DSA Consulting — All rights
                 reserved
               </div>
 

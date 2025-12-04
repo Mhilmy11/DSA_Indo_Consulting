@@ -1,3 +1,4 @@
+import { FaWhatsapp } from "react-icons/fa";
 import { useRef } from "react";
 import "./App.css";
 import AboutSection from "./components/AboutSection";
@@ -18,12 +19,21 @@ function App() {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <div className=" min-h-screen bg-gradient-to-br from-secondary via-[#052E70] to-primary">
+    <div className=" min-h-screen">
       <Navbar
         onViewTeams={() => scrollToSection(teamsRef)}
         onViewServices={() => scrollToSection(servicesRef)}
         onViewContact={() => scrollToSection(contactRef)}
       />
+
+      <div>
+        <button
+          onClick={() => window.open("https://wa.me/6281385269507", "_blank")}
+          className=" cursor-pointer fixed bottom-6 right-5 md:bottom-10 md:right-10 z-50 bg-green-400 text-white p-2 rounded-full hover:opacity-90 transition-all duration-300"
+        >
+          <FaWhatsapp size={35} />
+        </button>
+      </div>
 
       <Hero
         onViewAbout={() => scrollToSection(aboutRef)}

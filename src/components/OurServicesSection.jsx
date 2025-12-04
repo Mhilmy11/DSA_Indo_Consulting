@@ -50,11 +50,11 @@ export default function OurServicesSection({ servicesRef }) {
   return (
     <div
       ref={servicesRef}
-      className="py-16 md:py-28 font-sans overflow-x-hidden"
+      className="py-7 md:py-14 font-sans overflow-x-hidden"
     >
       <Container>
-        <div className="mx-1 px-6 md:px-10 py-14 bg-gradient-to-tr from-[#073B85] via-[#0D63CF] to-[#A5D4FF] rounded-xl shadow-xl">
-          <h3 className="font-bold bg-gradient-to-r from-[#021C3A] via-[#0449A8] to-[#0D63CF] text-transparent bg-clip-text text-2xl md:text-4xl pb-10">
+        <div className="mx-1 px-6 md:px-10 py-14">
+          <h3 className="font-bold text-[#184B8F] text-2xl md:text-4xl pb-10">
             Our Services
           </h3>
 
@@ -64,7 +64,7 @@ export default function OurServicesSection({ servicesRef }) {
 
               return (
                 <FramerMotion animation="zoom-in" delay={i * 0.3} key={i}>
-                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg overflow-hidden">
+                  <div className="bg-white rounded-xl shadow border border-[#CFF4E9] hover:shadow-lg transition overflow-hidden">
                     <img
                       src={serve.image}
                       alt={serve.title}
@@ -77,9 +77,7 @@ export default function OurServicesSection({ servicesRef }) {
                       </h2>
 
                       {!isOpen && (
-                        <p className="line-clamp-3 text-sm text-white/90">
-                          {serve.desc}
-                        </p>
+                        <p className="line-clamp-3 text-sm">{serve.desc}</p>
                       )}
 
                       <AnimatePresence>
@@ -91,16 +89,14 @@ export default function OurServicesSection({ servicesRef }) {
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.35 }}
                           >
-                            <p className="text-sm text-white/90">
-                              {serve.desc}
-                            </p>
+                            <p className="text-sm">{serve.desc}</p>
                           </motion.div>
                         )}
                       </AnimatePresence>
 
                       <button
                         onClick={() => handleToggle(i)}
-                        className="text-blue-300 hover:text-blue-400 text-sm mt-2"
+                        className="text-[#1E5DB3] hover:text-[#184B8F] text-sm mt-2 cursor-pointer"
                       >
                         {isOpen ? "Read Less" : "Read More"}
                       </button>
