@@ -24,11 +24,10 @@ export default function Footer({ onViewTeams, onViewServices }) {
               </div>
             </div>
 
-            <div className=" py-6">
-              <p className=" text-white">
-                Graha Persada Office Park, Jl. KH. Noer Ali No.3A, Kayuringin
-                Jaya, South Bekasi, West Java, Indonesia.
-              </p>
+            <div className=" py-6 text-white">
+              <p>Graha Persada Office Park - Building B, 5th Floor, Unit G</p>
+              <p>Jl. KH. Noer Ali No.3A, Kayuringin Jaya, Bekasi Selatan</p>
+              <p>Jawa Barat, Indonesia - 17144</p>
             </div>
 
             <div className=" flex items-center gap-6">
@@ -50,7 +49,7 @@ export default function Footer({ onViewTeams, onViewServices }) {
 
             <div className=" md:flex justify-between items-center">
               <div className="text-sm mt-3 italic font-semibold">
-                © {new Date().getFullYear()} 2025 DSA Consulting — All rights
+                © {new Date().getFullYear()} DSA Consulting — All rights
                 reserved
               </div>
 

@@ -53,7 +53,9 @@ export default function GetInTouch({ contactRef }) {
                 </p> */}
 
                 <div className=" pt-5 pb-16">
-                  <p className=" text-[#4F4F4F] text-sm">visit our office :</p>
+                  <h3 className=" text-[#4F4F4F] font-bold md:text-3xl text-xl pt-5">
+                    Visit Our Office :
+                  </h3>
 
                   <div className="w-full overflow-hidden">
                     <div className="relative w-full pb-[56.25%]">

@@ -29,7 +29,7 @@ export default function AboutSection({ aboutRef, onViewServices }) {
 
                   <p className="py-4 text-[#4F4F4F] leading-relaxed text-justify">
                     <span className="font-bold text-primary">
-                      DSA CONSULTING
+                      DSA Consulting
                     </span>{" "}
                     is a trusted tax consulting firm which provide professional
                     and comprehensive tax consulting services for individuals,
@@ -72,10 +72,10 @@ export default function AboutSection({ aboutRef, onViewServices }) {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                     <div className="absolute bottom-6 left-6">
                       <h3 className="text-white text-2xl font-bold">
-                        “professional and comprehensive tax consulting services”
+                        “Professional and Comprehensive Tax Consulting Services”
                       </h3>
                       <p className="text-gray-300 text-sm">
-                        individuals, businesses, and organizations.
+                        Individual, Business, and Organizations.
                       </p>
                     </div>
                   </div>
