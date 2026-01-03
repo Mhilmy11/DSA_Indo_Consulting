@@ -1,9 +1,30 @@
 import Container from "./Container";
 
 import HeroImage from "../assets/hero-image.jpeg";
+import HeroImage2 from "../assets/persada-office-park-2.jpg";
 import FramerMotion from "./FramerMotion";
+import { useState, useEffect } from "react";
+
+const FOR_HERO = [
+  {
+    activity: "Committed • Accurate • Strategic",
+    location: "DSA Consulting Office",
+    pict: HeroImage,
+  },
+  {
+    activity: "Committed • Accurate • Strategic",
+    location: "Persada Office Park",
+    pict: HeroImage2,
+  },
+];
 
 export default function Hero({ onViewAbout, onViewContact }) {
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setIdx((i) => (i + 1) % FOR_HERO.length), 3000);
+    return () => clearInterval(t);
+  }, []);
+
   return (
     <div className="pt-32 md:pb-40 pb-20 font-sans overflow-x-hidden">
       <Container>
@@ -48,15 +69,24 @@ export default function Hero({ onViewAbout, onViewContact }) {
 
           <div>
             <FramerMotion animation="fade-right">
-              <div className=" aspect-auto rounded-xl overflow-hidden shadow-2xl border border-white/5">
+              <div className="aspect-[16/9] rounded-xl overflow-hidden shadow-2xl border border-white/5">
                 <div className="w-full h-full relative">
-                  <img src={HeroImage} alt="hero-image-dsa" />
-                  <div className=" hover:scale-105 transition duration-300 absolute left-6 bottom-6 bg-white/6 px-4 py-3 rounded-2xl backdrop-blur-sm border border-white/8">
-                    <div className="text-sm font-semibold text-lightText">
-                      Persada Office Park
+                  {FOR_HERO.map((b, i) => (
+                    <img
+                      key={b.id}
+                      src={b.pict}
+                      alt={b.activity}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                        i === idx ? "opacity-100" : "opacity-0 scale-95"
+                      }`}
+                    />
+                  ))}
+                  <div className="absolute left-6 bottom-6 bg-white/6 px-4 py-3 rounded-2xl backdrop-blur-sm border border-white/8">
+                    <div className="text-sm font-semibold text-white">
+                      {FOR_HERO[idx].location}
                     </div>
                     <div className="text-xs text-gray-300">
-                      Committed • Accurate • Strategic
+                      {FOR_HERO[idx].activity}
                     </div>
                   </div>
                 </div>
