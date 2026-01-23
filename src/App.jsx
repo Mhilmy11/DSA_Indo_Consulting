@@ -7,6 +7,7 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import OurServicesSection from "./components/OurServicesSection";
 import OurTeamsSection from "./components/OurTeamsSection";
+import OurClient from "./components/OurClient.jsx";
 import GetInTouch from "./components/GetInTouch";
 
 function App() {
@@ -48,6 +49,8 @@ function App() {
       <OurTeamsSection teamsRef={teamsRef} />
 
       <OurServicesSection servicesRef={servicesRef} />
+
+      <OurClient />
 
       <GetInTouch contactRef={contactRef} />
 
