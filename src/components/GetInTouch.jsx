@@ -7,7 +7,7 @@ export default function GetInTouch({ contactRef }) {
       `Name: ${name}\n` + `Email: ${email}\n\n` + `Message:\n${message}`;
 
     const mailtoLink = `mailto:${emailTo}?subject=${encodeURIComponent(
-      subject
+      subject,
     )}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailtoLink;
@@ -26,7 +26,7 @@ export default function GetInTouch({ contactRef }) {
   };
 
   return (
-    <div ref={contactRef} className=" py-7 md:py-14 font-sans">
+    <div ref={contactRef} className=" py-7 font-sans">
       <div className=" bg-gradient-to-b from-[#F0FFFB] via-[#F7FFFE] to-white">
         <Container>
           <div className=" mx-4 p-10">

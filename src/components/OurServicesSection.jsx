@@ -48,10 +48,7 @@ export default function OurServicesSection({ servicesRef }) {
     setExpandedIndex(expandedIndex === i ? null : i);
   };
   return (
-    <div
-      ref={servicesRef}
-      className="py-7 md:py-14 font-sans overflow-x-hidden"
-    >
+    <div ref={servicesRef} className="py-7 font-sans overflow-x-hidden">
       <Container>
         <div className="mx-1 px-6 md:px-10 py-14">
           <h3 className="font-bold text-[#184B8F] text-2xl md:text-4xl pb-10">

@@ -26,7 +26,7 @@ export default function Hero({ onViewAbout, onViewContact }) {
   }, []);
 
   return (
-    <div className="pt-32 md:pb-40 pb-20 font-sans overflow-x-hidden">
+    <div className="pt-32 pb-20 font-sans overflow-x-hidden">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>

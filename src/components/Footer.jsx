@@ -8,7 +8,7 @@ import Container from "./Container";
 
 export default function Footer({ onViewTeams, onViewServices }) {
   return (
-    <div className=" pt-20 font-sans">
+    <div className=" font-sans">
       <div className=" bg-gradient-to-r from-[#1E5DB3] to-[#184B8F] py-6">
         <Container>
           <div className=" px-4">
@@ -58,7 +58,7 @@ export default function Footer({ onViewTeams, onViewServices }) {
                   onClick={() =>
                     window.open(
                       "https://id.linkedin.com/company/dsa-indo-consulting",
-                      "_blank"
+                      "_blank",
                     )
                   }
                   className=" cursor-pointer hover:text-gray-400"
@@ -89,7 +89,7 @@ export default function Footer({ onViewTeams, onViewServices }) {
                   onClick={() =>
                     window.open(
                       "https://www.instagram.com/dsaindoconsulting/",
-                      "_blank"
+                      "_blank",
                     )
                   }
                   className=" cursor-pointer hover:text-gray-400"
@@ -101,7 +101,7 @@ export default function Footer({ onViewTeams, onViewServices }) {
                   onClick={() =>
                     window.open(
                       "https://maps.app.goo.gl/C7bPsFGaUJqyHBLB7",
-                      "_blank"
+                      "_blank",
                     )
                   }
                   className=" cursor-pointer hover:text-gray-400"
