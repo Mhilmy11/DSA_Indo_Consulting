@@ -22,11 +22,11 @@ export default function OurClient() {
               Our Clients
             </h2>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 place-items-center">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-6 place-items-center">
               <img src={Client1} alt="client-1" className="w-28" />
               <img src={Client2} alt="client-2" className="w-28" />
               <img src={Client3} alt="client-3" className="w-20" />
-              <img src={Client4} alt="client-4" className="w-20" />
+              <img src={Client4} alt="client-4" className="w-24" />
               <img src={Client5} alt="client-5" className="w-20" />
               <img src={Client6} alt="client-6" className="w-20" />
               <img src={Client7} alt="client-7" className="w-32" />
